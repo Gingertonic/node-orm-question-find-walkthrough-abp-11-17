@@ -30,11 +30,12 @@ class Question{
   }
 
 static Find(id) {
-  const self = this
+  // const self = this
   const sql = `SELECT * FROM questions WHERE id = ?`
   return new Promise (function(resolve){
     db.get(sql, [this.id], function(err, result){
-      const question = new Question
+      const question = new Question(result.content)
+      question.id = result.id
       resolve (question)
     }
 
