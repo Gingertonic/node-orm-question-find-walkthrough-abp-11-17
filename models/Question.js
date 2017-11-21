@@ -37,7 +37,7 @@ static Find(id) {
       const question = new Question
       resolve (question)
     }
-  
+
   })
 }
 }
